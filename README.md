@@ -1,18 +1,14 @@
 
-# Projeto Djano 
+# Projeto Django NoobCoin
+Projeto desenvolvido para treinar e aprimorar conhecimentos do framework Django
 
-Projeto desenvolvido para treinar e aprimorar conhecimentos do framework Djago
--> [Apresentação com o print das telas do sistema NoobCoin](https://github.com/LucasAlbFar/Django_ByeBnb/blob/main/NoobCoin.pptx) <-
-
-## Metodologia:
-Para execução desde projeto, deve-se observar a seguinte ordem de execução do processos:
-* Gerar_csv_formatado.ipynb
-* Transformação_arquivos.ipynb
-* EDA.ipynb
+## Resumo:
+O sistema NoobCoin desenvolvido através do framework Ptyhon-Django, visa ser um repositório de dados referentes à cripto moedas, com o CRUD dos dados, controle de acesso por usuários cadastrados e dashboard personalizado para cada pessoa logada no sistema.
 
 ## Informações de ambiente:
 * Versão Python: Python 3.9.0
 * Versão Django: 3.2.3
 
+-> [Apresentação com o print das telas do sistema NoobCoin](https://github.com/LucasAlbFar/Django_ByeBnb/blob/main/NoobCoin.pptx) <-
 
 
