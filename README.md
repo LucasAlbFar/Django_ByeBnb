@@ -19,11 +19,9 @@ O sistema NoobCoin desenvolvido através do framework Ptyhon-Django, visa ser um
   * coins;
   * usuarios;
  
- * Media:
-  * Diretório para salvar imagens de upload
+ * Media: Diretório para salvar imagens de upload
 
-* Templates:
-  * Templates das páginas HTML (apps e partials)
+* Templates: Templates das páginas HTML (apps e partials)
 
 -> [Apresentação com o print das telas do sistema NoobCoin](https://github.com/LucasAlbFar/Django_ByeBnb/blob/main/NoobCoin.pptx) <-
 
