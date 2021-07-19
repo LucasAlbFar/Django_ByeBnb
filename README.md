@@ -9,7 +9,7 @@ O sistema NoobCoin desenvolvido através do framework Ptyhon-Django, visa ser um
 * Versão Python: Python 3.9.0
 * Versão Django: 3.2.3
 * Versão Postgres: 10
-* Bootstrap V5.0
+* Versão Bootstrap V5.0
 
 
 
