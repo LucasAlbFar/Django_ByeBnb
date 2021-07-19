@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- Preloader -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+        <img src="{% static 'img/core-img/cript_join.jpg' %}" alt="">
+    </div>
+
+    {% include 'partials/_busca.html' %}
+    {% include 'partials/_menu.html' %}
+
+        <!-- Cripto Post Search
+        <div class="receipe-post-search mb-80">
+            <div class="container">
+                <form action="#" method="post">
+                    <div class="row">
+                        <div class="col-12 col-lg-5">
+                            <select name="select1" id="select1">
+                                <option value="1">Old</option>
+                                <option value="1">New</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-lg-2 text-right">
+                            <button type="submit" class="btn delicious-btn">Buscar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div> -->
+
+        <!-- Cripto Slider -->
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="receipe-slider owl-carousel">
+                        {% if cripto.crito_image == '' %}
+                            <img src="{% static 'img/bg-img/cripto_banner.jpg' %}">
+                        {% else %}
+                            <img src="{{ cripto.crito_image.url }}" alt="">
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cripto Content Area -->
+        <div class="receipe-content-area">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-12 col-md-8">
+                        <div class="receipe-headline my-5">
+                            <span>{{ cripto.cripto_date_insert }}</span>
+                            <h2>{{ cripto.cripto_name }}</h2>
+                            <div class="receipe-duration">
+                                <h6>Symbol: {{ cripto.cripto_symbol }}</h6>
+                                <h6>Value: U${{ cripto.cripto_value }}</h6>
+                                <h6>Creators: {{ cripto.cripto_creators }}</h6>
+                                <h6>Supply: {{ cripto.cripto_supply }}</h6>
+                                <h6>Included by: {{ cripto.cripto_pessoa }}</h6>
+                                <h6>Category: {{ cripto.cripto_category }}</h6>
+                                <h6></h6>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <!-- Cripto description -->
+                        <div class="single-preparation-step d-flex">
+                            <p>{{ cripto.cripto_description }}</p>
+                        </div>
+                    </div>
+                </div>
+
+    {% include 'partials/_footer.html' %}
+{% endblock %}

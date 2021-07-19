@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Preloader -->
+<div id="preloader">
+   <i class="circle-preloader"></i>
+   <img src="{% static 'img/core-img/load_coin.png' %}" alt="">
+</div>
+
+{% include 'partials/_busca.html' %}
+
+{% include 'partials/_menu.html' %}
+
+<!-- ##### Contact Form Area Start ##### -->
+<div class="contact-area section-padding-0-80">
+   <div class="container">
+       <div class="row">
+           <div class="col-12">
+               <div class="section-heading">
+                   <h3>Update the cripto currency infos, {{ user.username }} :)</h3>
+               </div>
+           </div>
+       </div>
+       {% include 'partials/_alertas.html'%}
+       <div class="row">
+           <div class="col-12">
+           <p>All fields are required</p>
+               <div class="contact-form-area">
+                   <form action="{% url 'update_cripto' %}" method="POST" enctype="multipart/form-data">
+                           {% csrf_token %}
+                            <input type="text" id="cripto_id" class="form-control" name="cripto_id" value="{{ cripto.cripto_pk }}" hidden>
+                       <div class="row">
+                           <div class="col-12 col-lg-12">
+                               <label for="nome_receita"><b>Name cripto currency</b></label>
+                               <input type="text" id="nome_receita" class="form-control" name="cripto_name" value="{{ cripto.cripto_name }}" required>
+                           </div>
+                           <div class="col-12">
+                               <label for="file"><b>Creators</b></label>
+                               <input class="form-control" name="cripto_creators" value="{{ cripto.cripto_creators }}" required>
+                           </div>
+                           <div class="col-12 col-lg-3">
+                               <label for="file"><b>Value (U$)</b></label>
+                               <input type="number" step="any" class="form-control" name="cripto_value" value="{{ cripto.cripto_value }}" required>
+                           </div>
+                           <div class="col-12 col-lg-3">
+                               <label for="file"><b>Symbol</b></label>
+                               <input class="form-control" name="cripto_symbol" value="{{ cripto.cripto_symbol }}" required>
+                           </div>
+                           <div class="col-12 col-lg-3">
+                               <label for="file"><b>Supply</b></label>
+                               <input type="number" class="form-control" name="cripto_supply" value="{{ cripto.cripto_supply }}" required>
+                           </div>
+                           <div class="col-12">
+                               <label for="file"><b>Description</b></label>
+                               <textarea class="form-control" name="cripto_description" cols="30" rows="10"  value="{{ cripto.cripto_description }}" required></textarea>
+                           </div>
+                           <div class="col-12 col-lg-3">
+                               <label for="file"><b>Category</b></label>
+                               <input type="text" class="form-control" name="cripto_category" value="{{ cripto.cripto_category }}" required>
+                           </div>
+                           <div class="col-12 col-lg-3">
+                               <label for="file"><b>Add new Image</b></label>
+                               <img src="{{ cripto.crito_image.url }}" alt="">
+                           </div>
+                           <div class="col-12 text-center">
+                               <button class="btn btn-success" type="submit">Update</button>
+                           </div>
+                       </div>
+                   </form>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+
+{% include 'partials/_footer.html' %}
+{% endblock %}

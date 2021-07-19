@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- Preloader -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+        <img src="{% static 'img/core-img/load_coin.png' %}" alt="">
+    </div>
+
+
+    {% include 'partials/_busca.html' %}
+    {% include 'partials/_menu.html' %}
+    <div class="contact-area section-padding-0">
+       <div class="container">
+           <div class="row">
+               <div class="col-12">
+                   <div class="section-heading">
+                       <h3>Hello {{ user.username }}</h3>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+    <!-- ##### Cripto Area Start ##### -->
+    <section class="best-receipe-area">
+        <div class="container">
+            <div class="row">
+                {% if criptos %}
+                {% for item in criptos %}
+                <!-- Single Cripto Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-best-receipe-area mb-30">
+                        {% if item.crito_image == '' %}
+                            <img src="{% static 'img/bg-img/cripto.png' %}" alt="">
+                        {% else %}
+                            <img src="{{ item.crito_image.url }}" alt="">
+                        {% endif %}
+                        <div class="receipe-content">
+                            <a href="{% url 'criptomoedas' item.id %} ">
+                                <h5>{{ item.cripto_name }}</h5>
+                                <a href="{% url 'delete_cripto' item.id %}" type="button" class="btn btn-danger">Delete</a>
+                                <a href="{% url 'edit_cripto' item.id %}" type="button" class="btn btn-info">Update</a>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    <!-- ##### Cripto Area End ##### -->
+
+    {% include 'partials/_footer.html' %}
+{% endblock %}
